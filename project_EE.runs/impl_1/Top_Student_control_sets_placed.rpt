@@ -1,0 +1,120 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Tue Apr  5 18:52:59 2022
+| Host         : LAPTOP-S1RS66RO running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
+| Design       : Top_Student
+| Device       : xc7a35t
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    50 |
+| Unused register locations in slices containing registers |   110 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            6 |
+|      4 |            1 |
+|      6 |            2 |
+|      8 |            4 |
+|     10 |            1 |
+|     14 |            2 |
+|    16+ |           34 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             174 |           37 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             788 |          115 |
+| Yes          | No                    | No                     |             854 |          127 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             146 |           25 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------+------------------------------------+---------------------------------------+------------------+----------------+
+|        Clock Signal       |            Enable Signal           |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
++---------------------------+------------------------------------+---------------------------------------+------------------+----------------+
+|  fasterclock/faster_clock | mysegdigit/an_dis[0]_i_1_n_0       | sw_IBUF[13]                           |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | sw_IBUF[13]                        | update_noise_lv/SR[1]                 |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | sw_IBUF[13]                        | update_noise_lv/SR[0]                 |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | sw_IBUF[13]                        | update_noise_lv/SR[2]                 |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | sw_IBUF[13]                        | update_noise_lv/SR[3]                 |                1 |              2 |
+|  CLOCK_IBUF_BUFG          | sw_IBUF[13]                        | update_noise_lv/SR[4]                 |                1 |              2 |
+| ~clk6p25m_BUFG            |                                    |                                       |                2 |              4 |
+|  clk100Hz/clk100          |                                    |                                       |                1 |              6 |
+|  fasterclock/faster_clock | mysegdigit/an_dis[3]_i_2_n_0       | mysegdigit/an_dis[3]_i_1_n_0          |                1 |              6 |
+|  clk1kHz/CLK              |                                    |                                       |                1 |              8 |
+|  clk25m_BUFG              | displayR/oled_data2_reg[4]_2[0]    | displayR/SS[0]                        |                3 |              8 |
+|  clk25m_BUFG              | displayR/oled_data2_reg[4]_2[0]    | displayR/SS[1]                        |                2 |              8 |
+|  my_clock_BUFG            | maindis/S_L_i_1_n_0                |                                       |                1 |              8 |
+|  clk1kHz/CLK              | center/pulse_high                  |                                       |                1 |             10 |
+|  clk1kHz/CLK              | center/p_1_in                      |                                       |                2 |             14 |
+|  fasterclock/faster_clock | mysegdigit/seg_dis[6]_i_1_n_0      |                                       |                3 |             14 |
+|  CLOCK_IBUF_BUFG          |                                    |                                       |                8 |             18 |
+|  J_MIC2_Pin1_OBUF_BUFG    | data_noiseL/count[11]_i_1_n_0      |                                       |                3 |             18 |
+|  clk25m_BUFG              |                                    |                                       |                5 |             20 |
+|  J_MIC2_Pin1_OBUF_BUFG    |                                    | data_noiseR/count[11]_i_1__0_n_0      |                3 |             22 |
+|  J_MIC2_Pin1_OBUF_BUFG    | data_noiseR/count[11]_i_1__0_n_0   |                                       |                3 |             22 |
+|  J_MIC2_Pin1_OBUF_BUFG    |                                    | data_noiseL/count[11]_i_1_n_0         |                3 |             22 |
+| ~audioL/J_MIC2_Pin4_OBUF  |                                    |                                       |                4 |             24 |
+| ~audioR/J_MIC3_Pin4_OBUF  |                                    |                                       |                3 |             24 |
+|  J_MIC2_Pin1_OBUF_BUFG    | data_noiseR/p_0_in                 | data_noiseR/count[11]_i_1__0_n_0      |                2 |             24 |
+|  J_MIC2_Pin1_OBUF_BUFG    | data_noiseL/p_0_in                 | data_noiseL/count[11]_i_1_n_0         |                2 |             24 |
+|  fasterclock/faster_clock | mysegdigit/state[2]_i_1_n_0        |                                       |                6 |             30 |
+|  my_clock_BUFG            | maindis/oled_data[15]_i_1_n_0      |                                       |                8 |             32 |
+| ~clk6p25m_BUFG            |                                    | displayL/frame_counter[16]_i_1_n_0    |                5 |             34 |
+| ~clk6p25m_BUFG            |                                    | displayR/frame_counter[16]_i_1__0_n_0 |                5 |             34 |
+| ~clk6p25m_BUFG            | displayR/delay[0]_i_1__0_n_0       |                                       |                5 |             40 |
+| ~clk6p25m_BUFG            | displayL/delay[0]_i_1_n_0          |                                       |                5 |             40 |
+|  CLOCK_IBUF_BUFG          |                                    | J_MIC2_Pin1_OBUF_BUFG                 |                6 |             48 |
+|  my_clock_BUFG            | maindis/counter                    |                                       |                6 |             48 |
+|  my_clock_BUFG            | maindis/startup_counter[0]_i_1_n_0 |                                       |                7 |             54 |
+|  CLOCK_IBUF_BUFG          |                                    | clk1kHz/clear                         |                8 |             64 |
+|  CLOCK_IBUF_BUFG          |                                    | clk100Hz/clear                        |                8 |             64 |
+|  CLOCK_IBUF_BUFG          |                                    | clk25MHz/clear                        |                8 |             64 |
+|  CLOCK_IBUF_BUFG          |                                    | clk_20kHz/clear                       |                8 |             64 |
+|  CLOCK_IBUF_BUFG          |                                    | clk_6p25MHz/clear                     |                8 |             64 |
+|  CLOCK_IBUF_BUFG          |                                    | fasterclock/clear                     |                8 |             64 |
+| ~clk6p25m_BUFG            | displayR/state                     |                                       |                9 |             64 |
+| ~clk6p25m_BUFG            | displayL/state                     |                                       |                8 |             64 |
+|  clk25m_BUFG              | displayR/ld_count_reg[0]           | displayR/ld_count_reg[0]_0            |                9 |             64 |
+|  CLOCK_IBUF_BUFG          |                                    | my_clock_1/clear                      |                8 |             64 |
+|  J_MIC2_Pin1_OBUF_BUFG    |                                    |                                       |               13 |             70 |
+| ~clk6p25m_BUFG            |                                    | displayR/spi_word[39]_i_1__0_n_0      |               18 |             90 |
+| ~clk6p25m_BUFG            |                                    | displayL/spi_word[39]_i_1_n_0         |               19 |             90 |
+|  clk25m_BUFG              | displayR/E[0]                      |                                       |               33 |            198 |
+|  clk25m_BUFG              | displayR/L3_reg_0                  |                                       |               27 |            198 |
++---------------------------+------------------------------------+---------------------------------------+------------------+----------------+
+
+
